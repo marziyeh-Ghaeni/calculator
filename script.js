@@ -39,14 +39,15 @@ backspace.addEventListener('click',function (e){
     if(length>1){
         boxResult.value=boxResult.value.substr(0,length-1)
     }else {
-        boxResult.textContent="";
+        boxResult.value="";
     }
 })
 
 //سینوس
 sin.addEventListener('click', function (e){
-    boxResult.textContent="sin";
-    boxResult.value.substr(3,boxResult.value.length)
+    number1=Number(boxResult.value);
+    result=Math.sin(number1*Math.PI/180);
+    boxResult.value=result;
 })
 
 //نمایش اعداد در صفحه نمایش
@@ -118,17 +119,12 @@ root.addEventListener('click', function (e){
         result=Math.sqrt(number1);
         boxResult.value=result;
 })
-//ریشه سوم
-thirdRoot.addEventListener('click', function (e){
-        number1=Number(boxResult.value);
-        result=Math.cbrt(number1);
-        boxResult.value=result;
-})
 //درصد
 percent.addEventListener('click', function (e){
         number1=Number(boxResult.value);
         boxResult.value="";
         operation="%"
+
 })
 //قدرمطلق
 AbsoluteValue.addEventListener('click', function (e){
